@@ -22,13 +22,9 @@
       left: -250px;
       background-color: #f4f4f4;
       padding-top: 60px;
-      transition: 0.3s;
+      transition: left 0.3s ease;
       box-shadow: 2px 0 5px rgba(0,0,0,0.1);
       z-index: 10;
-    }
-
-    .active-sidebar {
-      left: 0 !important;
     }
 
     .sidebar a {
@@ -42,6 +38,12 @@
       background-color: #ddd;
     }
 
+    /* Active sidebar */
+    .sidebar.active {
+      left: 0;
+    }
+
+    /* Hamburger */
     .hamburger {
       font-size: 30px;
       cursor: pointer;
@@ -54,13 +56,14 @@
       border: none;
     }
 
+    /* Main Content */
     .main {
       margin-left: 0;
-      transition: margin-left 0.3s;
+      transition: margin-left 0.3s ease;
       padding: 60px 20px;
     }
 
-    .main-shifted {
+    .main.shifted {
       margin-left: 250px;
     }
 
@@ -99,7 +102,7 @@
       border-top: 1px solid #ccc;
     }
 
-    .active-dropdown {
+    .dropdown-content.active {
       display: block;
     }
   </style>
@@ -110,7 +113,7 @@
   <button class="hamburger" onclick="toggleSidebar()">☰</button>
 
   <!-- Sidebar -->
-  <div id="sidebar" class="sidebar active-sidebar">
+  <div id="sidebar" class="sidebar">
     <a href="../index.html">Home</a>
     <a href="../about.html">About</a>
     <a href="index.html">Excel & Spreadsheet</a>
@@ -157,8 +160,8 @@
     function toggleSidebar() {
       const sidebar = document.getElementById("sidebar");
       const main = document.getElementById("mainContent");
-      sidebar.classList.toggle("active-sidebar");
-      main.classList.toggle("main-shifted");
+      sidebar.classList.toggle("active");
+      main.classList.toggle("shifted");
     }
 
     // Dropdown Toggle
@@ -166,7 +169,7 @@
     dropdownButtons.forEach(btn => {
       btn.addEventListener("click", function () {
         const content = this.nextElementSibling;
-        content.classList.toggle("active-dropdown");
+        content.classList.toggle("active");
       });
     });
   </script>
