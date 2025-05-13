@@ -1,1 +1,78 @@
-<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/c8f04f14-08d8-43dd-9bf0-02138368f910/page/97cFF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Excel Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    .dropdown {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .dropdown-btn {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: left;
+      background-color: #f0f0f0;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .dropdown-content {
+      display: none;
+      padding: 10px 15px 20px;
+      border-top: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Excel Project Gallery</h1>
+
+  <!-- Dropdown 1 -->
+  <div class="dropdown">
+    <button class="dropdown-btn">OLDE TOWNE COFFEE</button>
+    <div class="dropdown-content">
+      <iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/c8f04f14-08d8-43dd-9bf0-02138368f910/page/97cFF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+    </div>
+  </div>
+
+  <!-- Dropdown 2 -->
+  <div class="dropdown">
+    <button class="dropdown-btn">BRAZILLIAN FIRE</button>
+    <div class="dropdown-content">
+      <iframe src="https://lookerstudio.google.com/embed/reporting/aaaaa/page/bbbb" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+
+    dropdownButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>
