@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home</title>
+  <title>My Learning Journey</title>
   <style>
     /* General Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #333;
     }
 
     /* Sidebar */
@@ -23,6 +25,7 @@
       padding-top: 60px;
       transition: 0.3s;
       box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      z-index: 10;
     }
 
     .sidebar a {
@@ -49,13 +52,6 @@
       border: none;
     }
 
-    /* Main Content */
-    .main {
-      margin-left: 0;
-      transition: margin-left 0.3s;
-      padding: 60px 20px;
-    }
-
     /* Active sidebar */
     .active-sidebar {
       left: 0;
@@ -64,37 +60,8 @@
     .main-shifted {
       margin-left: 250px;
     }
-  </style>
-</head>
-<body>
 
-  <!-- Hamburger Menu -->
-  <button class="hamburger" onclick="toggleSidebar()">☰</button>
-
-  <!-- Sidebar Menu -->
-  <div id="sidebar" class="sidebar">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="excel/index.html">Ms. Excel & Spreadsheet</a>
-    <a href="tableau/index.html">Tableau</a>
-    <a href="#">Power BI</a>
-    <a href="#">R</a>
-    <a href="#">Python</a>
-    <a href="#">SAS</a>
-  </div>
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Learning Journey</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff;
-      color: #333;
-    }
-
+    /* Hero Section */
     .hero {
       position: relative;
       height: 100vh;
@@ -122,6 +89,7 @@
       z-index: 2;
     }
 
+    /* Tools Section */
     .tools {
       padding: 40px;
       text-align: center;
@@ -149,22 +117,42 @@
     }
   </style>
 </head>
-  
-  <!-- Main Content -->
-  <div id="mainContent" class="main">
-    <h1>My Learning Journey</h1>
-    <!-- Bisa lanjutkan dengan foto, deskripsi, icon tools dll -->
+<body>
+
+  <!-- Hamburger Menu -->
+  <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+  <!-- Sidebar Menu -->
+  <div id="sidebar" class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="excel/index.html">Ms. Excel & Spreadsheet</a>
+    <a href="tableau/index.html">Tableau</a>
+    <a href="#">Power BI</a>
+    <a href="#">R</a>
+    <a href="#">Python</a>
+    <a href="#">SAS</a>
   </div>
 
-  <div class="tools">
-    <h2>Explore My Projects</h2>
-    <div class="icon-container">
-      <a href="excel/"><img src="icons/excel.jpg" alt="Excel"></a>
-      <a href="tableau/"><img src="icons/tableau.jpg" alt="Tableau"></a>
-      <a href="powerbi/"><img src="icons/power-bi.jpg" alt="Power BI"></a>
+  <!-- Main Content -->
+  <div id="mainContent" class="main">
+    <!-- Hero Cover -->
+    <div class="hero">
+      <h1>My Learning Journey</h1>
+    </div>
+
+    <!-- Tools Section -->
+    <div class="tools">
+      <h2>Explore My Projects</h2>
+      <div class="icon-container">
+        <a href="excel/"><img src="icons/excel.jpg" alt="Excel"></a>
+        <a href="tableau/"><img src="icons/tableau.jpg" alt="Tableau"></a>
+        <a href="powerbi/"><img src="icons/power-bi.jpg" alt="Power BI"></a>
+      </div>
     </div>
   </div>
-  
+
+  <!-- Script -->
   <script>
     function toggleSidebar() {
       const sidebar = document.getElementById("sidebar");
