@@ -1,1 +1,81 @@
-<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/c8f04f14-08d8-43dd-9bf0-02138368f910/page/97cFF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Data Portfolio</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+      padding: 40px;
+    }
+    img.profile {
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    h1 { font-size: 28px; }
+    p { max-width: 600px; margin: auto; }
+    .tools {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      gap: 30px;
+    }
+    .tool {
+      text-align: center;
+      width: 100px;
+    }
+    .tool img {
+      width: 60px;
+      transition: transform 0.3s;
+    }
+    .tool img:hover {
+      transform: scale(1.2);
+    }
+    .tool a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <img class="profile" src="foto.jpg" alt="Foto Kamu">
+  <h1>Halo, saya [Nama Kamu]</h1>
+  <p>Saya senang mengolah dan memvisualisasikan data menggunakan berbagai tools seperti Excel, Tableau, Python, dan lainnya. Silakan klik tools di bawah untuk melihat hasil karya saya.</p>
+
+  <div class="tools">
+    <div class="tool">
+      <a href="excel/index.html">
+        <img src="icons/excel.png" alt="Excel">
+        Excel
+      </a>
+    </div>
+    <div class="tool">
+      <a href="tableau/index.html">
+        <img src="icons/tableau.png" alt="Tableau">
+        Tableau
+      </a>
+    </div>
+    <div class="tool">
+      <a href="powerbi/index.html">
+        <img src="icons/powerbi.png" alt="Power BI">
+        Power BI
+      </a>
+    </div>
+    <div class="tool">
+      <a href="python/index.html">
+        <img src="icons/python.png" alt="Python">
+        Python
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
