@@ -1,1 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Power BI</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      background-color: #f4f4f4;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+
+    .sidebar a {
+      font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+      display: block;
+      padding: 15px 25px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .sidebar a:hover {
+      background-color: #ddd;
+    }
+
+    /* Active sidebar */
+    .sidebar.active {
+      left: 0;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      font-size: 30px;
+      cursor: pointer;
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background: none;
+      border: none;
+    }
+
+    .username {
+      font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+      font-size: 25px;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+
+    /* Main Content */
+    .main {
+      margin-left: 0;
+      transition: margin-left 0.3s ease;
+      padding: 60px 20px;
+    }
+
+    .main.shifted {
+      margin-left: 250px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .dataset {
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .dropdown-btn {
+      font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+      width: 100%;
+      padding: 15px;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: left;
+      background-color: #e7e7e7;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-btn:hover {
+      background-color: #d7d7d7;
+    }
+
+    .dropdown-content {
+      display: none;
+      padding: 15px;
+      background-color: #fafafa;
+      border-top: 1px solid #ccc;
+    }
+
+    .dropdown-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hamburger Menu -->
+  <button class="hamburger" onclick="toggleSidebar()">☰ <span class="username">Nazifa Hamidiyati</span></button>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About</a>
+    <a href="../excel/index.html">Excel & Spreadsheet</a>
+    <a href="../tableau/index.html">Tableau</a>
+    <a href="../power-bi/index.html">Power BI</a>
+    <a href="#">R</a>
+    <a href="#">SAS</a>
+    <a href="#">Python</a>
+  </div>
+
+  <!-- Main Content -->
+  <div id="mainContent" class="main">
+    <h1>Power BI Project</h1>
+
+    <!-- Dataset 1 -->
+    <div class="dataset">
+      <button class="dropdown-btn">OLDE TOWNE COFFEE</button>
+      <div class="dropdown-content">
+        <iframe src="OldeTowneCoffee.html" width="100%" height="500px" frameborder="0"></iframe>
+      </div>
+    </div>
+
+    <!-- Dataset 2 -->
+    <div class="dataset">
+      <button class="dropdown-btn">OLDE TOWNE COFFEE</button>
+      <div class="dropdown-content">
+        <iframe src="OldeTowneCoffee.html" width="100%" height="500px" frameborder="0"></iframe>
+      </div>
+    </div>
+
+    <!-- Dataset 3 -->
+    <div class="dataset">
+      <button class="dropdown-btn">OLDE TOWNE COFFEE</button>
+      <div class="dropdown-content">
+        <iframe src="OldeTowneCoffee.html" width="100%" height="500px" frameborder="0"></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const main = document.getElementById("mainContent");
+      sidebar.classList.toggle("active");
+      main.classList.toggle("shifted");
+    }
+
+    // Dropdown Toggle
+    const dropdownButtons = document.querySelectorAll(".dropdown-btn");
+    dropdownButtons.forEach(btn => {
+      btn.addEventListener("click", function () {
+        const content = this.nextElementSibling;
+        content.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
 
