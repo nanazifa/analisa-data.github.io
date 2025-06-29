@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dataset 1 - Brazilian Fire (Yearly) - Tableau Simulation</title>
+  <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .viz-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Simulasi Tableau: Total Kebakaran per Tahun</h1>
+
+  <div class="viz-container">
+    <tableau-viz
+      id="tableauViz"
+      src="https://public.tableau.com/views/BrazilianFire-YearlyFires/Dashboard1"
+      width="100%"
+      height="800">
+    </tableau-viz>
+  </div>
+
+</body>
+</html>
